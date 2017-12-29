@@ -86,7 +86,7 @@ GeomTimeline <- ggplot2::ggproto("GeomTimeline", ggplot2::Geom,
 
 #' A geom for adding a timeline plot
 #'
-#' This geom plots a timeline, with circles showing the dates when the event occurred.
+#' This geom plots a timeline with circles showing the dates when the event occurred.
 #' It is intended for the purposes of graphically exploring the NOAA Significant
 #' Earthquake Database (included in this package), but can show any data with a column
 #' of valid \code{date} objects
