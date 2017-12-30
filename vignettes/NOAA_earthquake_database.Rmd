@@ -37,7 +37,6 @@ This first function builds a date field and ensures that the longitude and latit
 raw_noaa <- as.data.table(noaa_data)
 tail(raw_noaa)
 
-
 clean_noaa <- eq_clean_data(raw_noaa)
 tail(clean_noaa)
 ```
