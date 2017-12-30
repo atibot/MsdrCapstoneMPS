@@ -14,7 +14,7 @@ test_that("Leaflet map", {
   expect_equal(attributes(g)$package, "leaflet")
 })
 
-test_that("Leaflet map labels"), {
+test_that("Leaflet map labels", {
   g <- raw_noaa %>%
     eq_clean_data() %>%
     eq_location_clean() %>%
@@ -23,4 +23,4 @@ test_that("Leaflet map labels"), {
 
   ## html label is built correctly
   expect_equal(g$popup_text[1], "<b>Location: </b>San Andres Tuxtla, Tuxtepec<br /> <b>Magnitude:</b> 5.9 <br />")
-}
+})

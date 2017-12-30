@@ -41,7 +41,7 @@ test_that("Earthquake theme", {
   expect_equal(length(g[5]$theme), 61)
 })
 
-test_that("Timeline labels"), {
+test_that("Timeline labels", {
   g <- ggplot(data = eq_subset, aes(x = DATE, y = COUNTRY)) + geom_timeline(xmin = "2005-01-01", xmax = "2010-12-31", aes(color = DEATHS,size = EQ_PRIMARY)) + labs(y = "") + geom_timeline_labels(n_max = 20, aes(label = LOCATION_NAME, magnitude = EQ_PRIMARY))
 
   ## Adds a second layer for labels
@@ -52,4 +52,4 @@ test_that("Timeline labels"), {
 
   ## Magnitude is mapped to EQ_PRIMARY
   expect_equal(as.character(g[2]$layers[[2]]$mapping$magnitude), "EQ_PRIMARY")
-}
+})
