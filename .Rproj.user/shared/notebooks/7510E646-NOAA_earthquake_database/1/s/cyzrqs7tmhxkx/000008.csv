@@ -1,0 +1,5 @@
+"0","clean_noaa <- eq_clean_data(raw_noaa)
+"
+"2","Error in `:=`(DATE, as.Date(paste(YEAR, MONTH, DAY, sep = ""-""), format = ""%Y-%m-%d"")) : 
+  Check that is.data.table(DT) == TRUE. Otherwise, := and `:=`(...) are defined for use in j, once only and in particular ways. See help("":="").
+"

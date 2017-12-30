@@ -236,7 +236,7 @@ geom_timeline <- function(mapping = NULL, data = NULL, stat = "identity",
 #'   aes(label = LOCATION_NAME, magnitude = EQ_PRIMARY)) + theme_earthquake() +
 #'   labs(y = "")
 #'
-#' @import ggplot2 grid
+#' @import ggplot2 grid ggthemes
 #' @export
 
 theme_earthquake <- function(base_size = 10, base_family = "sans",

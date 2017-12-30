@@ -56,7 +56,7 @@ often aesthetics, used to set an aesthetic to a fixed value, like
 to the paired geom/stat.}
 }
 \description{
-This geom plots a timeline, with circles showing the dates when the event occurred.
+This geom plots a timeline with circles showing the dates when the event occurred.
 It is intended for the purposes of graphically exploring the NOAA Significant
 Earthquake Database (included in this package), but can show any data with a column
 of valid \code{date} objects
