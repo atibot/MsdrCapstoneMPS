@@ -3,6 +3,9 @@
 
 # MsdrCapstoneMPS
 
+[![Travis-CI Build
+Status](https://travis-ci.org/marksendak/MsdrCapstoneMPS.svg?branch=master)](https://travis-ci.org/marksendak/MsdrCapstoneMPS)
+
 ## Overview
 
 This project is the capstone project for the Coursera Specialization
