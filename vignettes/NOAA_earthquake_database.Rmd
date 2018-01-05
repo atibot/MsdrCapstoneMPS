@@ -131,7 +131,8 @@ Plot earthquakes in Mexico with date labels in popup windows:
 ```{r eq_map, message = FALSE, fig.height = 6, fig.width = 8}
 raw_noaa %>%
   eq_clean_data() %>%
-  dplyr::filter(COUNTRY == "MEXICO" & lubridate::year(DATE) >= 2000) %>%
+  dplyr::filter(COUNTRY == "MEXICO" &
+                  DATE >= as.Date("2000-01-01")) %>%
   eq_map(annot_col = "DATE")
 ```
 
@@ -145,7 +146,7 @@ Plot earthquakes in Mexico with nicely formated popup windows that include locat
 raw_noaa %>%
   eq_clean_data() %>%
   eq_location_clean() %>%
-  dplyr::filter(COUNTRY == "MEXICO" & lubridate::year(DATE) >= 2000) %>%
-  dplyr::mutate(popup_text = eq_create_label(.)) %>%
+  dplyr::filter(COUNTRY == "MEXICO" &
+                  DATE >= as.Date("2000-01-01")) %>%  dplyr::mutate(popup_text = eq_create_label(.)) %>%
   eq_map(annot_col = "popup_text")
 ```
