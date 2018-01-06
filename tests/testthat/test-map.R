@@ -7,7 +7,7 @@ raw_noaa <- as.data.table(noaa_data)
 test_that("Leaflet map", {
   g <- raw_noaa %>%
     eq_clean_data() %>%
-    dplyr::filter(COUNTRY == "MEXICO" & lubridate::year(DATE) >= 2000) %>%
+    dplyr::filter(COUNTRY == "MEXICO" & DATE >= as.Date("2000-01-01")) %>%
     eq_map(annot_col = "DATE")
 
   ## Plot is a leaflet map
@@ -18,7 +18,7 @@ test_that("Leaflet map labels", {
   g <- raw_noaa %>%
     eq_clean_data() %>%
     eq_location_clean() %>%
-    dplyr::filter(COUNTRY == "MEXICO" & lubridate::year(DATE) >= 2000) %>%
+    dplyr::filter(COUNTRY == "MEXICO" & DATE >= as.Date("2000-01-01")) %>%
     dplyr::mutate(popup_text = eq_create_label(.))
 
   ## html label is built correctly
