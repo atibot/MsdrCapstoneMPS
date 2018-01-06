@@ -6,6 +6,13 @@
 \usage{
 theme_earthquake(base_size = 10, base_family = "sans", y_axis = TRUE)
 }
+\arguments{
+\item{base_size}{base font size}
+
+\item{base_family}{base font family}
+
+\item{y_axis}{by default there is no y axis}
+}
 \description{
 This function creates the theme to plot the earthquake timelines
 }

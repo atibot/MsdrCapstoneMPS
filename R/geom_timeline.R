@@ -193,6 +193,9 @@ geom_timeline <- function(mapping = NULL, data = NULL, stat = "identity",
 #'  \item geom_points: \url{https://github.com/jrnold/ggthemes/edit/master/R/economist.R}
 #' }
 #'
+#' @inheritParams ggplot2::theme_grey
+#' @param y_axis by default there is no y axis
+#'
 #' @examples
 #' library(data.table)
 #' library(ggplot2)

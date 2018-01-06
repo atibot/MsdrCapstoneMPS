@@ -26,13 +26,13 @@
 #' ## Plot earthquakes in Mexico with date labels in popup windows
 #' raw_noaa %>%
 #'   eq_clean_data() %>%
-#'   dplyr::filter(COUNTRY == "MEXICO" & lubridate::year(DATE) >= 2000) %>%
+#'   dplyr::filter(COUNTRY == "MEXICO" & DATE >= as.Date("2000-01-01")) %>%
 #'   eq_map(annot_col = "DATE")
 #' ## Plot earthquakes in Mexico with nicely formated popup windows
 #' raw_noaa %>%
 #'   eq_clean_data() %>%
 #'   eq_location_clean() %>%
-#'   dplyr::filter(COUNTRY == "MEXICO" & lubridate::year(DATE) >= 2000) %>%
+#'   dplyr::filter(COUNTRY == "MEXICO" & DATE >= as.Date("2000-01-01")) %>%
 #'   dplyr::mutate(popup_text = eq_create_label(.)) %>%
 #'   eq_map(annot_col = "popup_text")
 #'
@@ -70,17 +70,18 @@ eq_map <- function(earthquake_data, annot_col) {
 #'
 #' @examples
 #' library(data.table)
+#' library(dplyr)
 #' raw_noaa <- as.data.table(noaa_data)
 ## Plot earthquakes in Mexico with date labels in popup windows
 #' raw_noaa %>%
 #'   eq_clean_data() %>%
-#'   dplyr::filter(COUNTRY == "MEXICO" & lubridate::year(DATE) >= 2000) %>%
+#'   dplyr::filter(COUNTRY == "MEXICO" & DATE >= as.Date("2000-01-01")) %>%
 #'   eq_map(annot_col = "DATE")
-#' ## Plot earthquakes in Mexico with nicely formated popup windows that include location, magnitude, and total deaths for each earthquake
+#' ## Plot earthquakes in Mexico with nicely formated popup windows
 #' raw_noaa %>%
 #'   eq_clean_data() %>%
 #'   eq_location_clean() %>%
-#'   dplyr::filter(COUNTRY == "MEXICO" & lubridate::year(DATE) >= 2000) %>%
+#'   dplyr::filter(COUNTRY == "MEXICO" & DATE >= as.Date("2000-01-01")) %>%
 #'   dplyr::mutate(popup_text = eq_create_label(.)) %>%
 #'   eq_map(annot_col = "popup_text")
 #'
