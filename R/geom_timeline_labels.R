@@ -1,6 +1,6 @@
 #' A geom for labeling the timeline plot from \code{\link{geom_timeline}}
 #'
-#' This geom labels the timeline created from \code{\link{geom_timeline}}. 
+#' This geom labels the timeline created from \code{\link{geom_timeline}}.
 #'  It draws vertical lines up from the points on the timeline, with labels
 #'  for the particular event.
 #' You have the option of only labeleing the top \code{n_max} number of events
@@ -35,28 +35,29 @@
 #'
 #' @examples
 #' library(data.table)
+#' library(ggplot2)
 #' raw_noaa <- as.data.table(noaa_data)
 #'
 #' ## Build date variable
 #' clean_noaa <- eq_clean_data(raw_noaa)
 #' clean_noaa <- eq_location_clean(clean_noaa)
-#' 
+#'
 #' ## Set key to date
 #' setkey(clean_noaa, DATE)
-#' 
+#'
 #' ## Pull test set of 5 years
 #' eq_subset <- clean_noaa[DATE >= "2005-01-01" & DATE <= "2010-12-31"]
-#' 
+#'
 #' ## Subset to 5 countries
 #' top_countries <- eq_subset[,.N,by = COUNTRY][order(-N)][1:5, COUNTRY]
 #' eq_subset <- eq_subset[COUNTRY %in% top_countries]
-#' 
+#'
 #' ## Set country to factor
 #' eq_subset[, COUNTRY := as.factor(COUNTRY)]
-#' 
+#'
 #' ## Set earthquake magnitude to numeric
 #' eq_subset[, EQ_PRIMARY := as.numeric(EQ_PRIMARY)]
-#' 
+#'
 #' ## Plot all countries on single time line with labels for 20 largest
 #' # earthquakes.
 #' g <- ggplot(data = eq_subset, aes(x = DATE))
@@ -108,28 +109,29 @@ geom_timeline_labels <- function(mapping = NULL,
 #'
 #' @examples
 #' library(data.table)
+#' library(ggplot2)
 #' raw_noaa <- as.data.table(noaa_data)
 #'
 #' ## Build date variable
 #' clean_noaa <- eq_clean_data(raw_noaa)
 #' clean_noaa <- eq_location_clean(clean_noaa)
-#' 
+#'
 #' ## Set key to date
 #' setkey(clean_noaa, DATE)
-#' 
+#'
 #' ## Pull test set of 5 years
 #' eq_subset <- clean_noaa[DATE >= "2005-01-01" & DATE <= "2010-12-31"]
-#' 
+#'
 #' ## Subset to 5 countries
 #' top_countries <- eq_subset[,.N,by = COUNTRY][order(-N)][1:5, COUNTRY]
 #' eq_subset <- eq_subset[COUNTRY %in% top_countries]
-#' 
+#'
 #' ## Set country to factor
 #' eq_subset[, COUNTRY := as.factor(COUNTRY)]
-#' 
+#'
 #' ## Set earthquake magnitude to numeric
 #' eq_subset[, EQ_PRIMARY := as.numeric(EQ_PRIMARY)]
-#' 
+#'
 #' ## Plot all countries on single time line with labels for 20 largest
 #' # earthquakes.
 #' g <- ggplot(data = eq_subset, aes(x = DATE))
