@@ -17,7 +17,7 @@ Authors@R: person("Mark", "Sendak", email = "mark.sendak@gmail.com",
 Description: This package is for the capstone course in the mastering software
 	development in R specialization. The package provides tools to clean and
 	visualize data from the NOAA significant earthquake database.
-License: MIT License
+License: MIT + file LICENSE
 LazyData: true
 URL: https://github.com/marksendak/MsdrCapstoneMPS
 RoxygenNote: 6.0.1

@@ -33,11 +33,13 @@ This function uses of the popular \code{leaflet} package, which creates
 \examples{
 library(data.table)
 raw_noaa <- as.data.table(noaa_data)
+## Plot earthquakes in Mexico with date labels in popup windows
 raw_noaa \%>\%
   eq_clean_data() \%>\%
   dplyr::filter(COUNTRY == "MEXICO" & lubridate::year(DATE) >= 2000) \%>\%
   eq_map(annot_col = "DATE")
-## Plot earthquakes in Mexico with nicely formated popup windows that include location, magnitude, and total deaths for each earthquake
+## Plot earthquakes in Mexico with nicely formated popup windows that
+ # include location, magnitude, and total deaths for each earthquake
 raw_noaa \%>\%
   eq_clean_data() \%>\%
   eq_location_clean() \%>\%

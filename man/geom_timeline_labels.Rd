@@ -56,7 +56,7 @@ often aesthetics, used to set an aesthetic to a fixed value, like
 to the paired geom/stat.}
 }
 \description{
-This geom labels the timeline created from \code{\link{geom_timeline}}. 
+This geom labels the timeline created from \code{\link{geom_timeline}}.
  It draws vertical lines up from the points on the timeline, with labels
  for the particular event.
 You have the option of only labeleing the top \code{n_max} number of events
@@ -88,6 +88,7 @@ You have the option of only labeleing the top \code{n_max} number of events
 
 \examples{
 library(data.table)
+library(ggplot2)
 raw_noaa <- as.data.table(noaa_data)
 
 ## Build date variable

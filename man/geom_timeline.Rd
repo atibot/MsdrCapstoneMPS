@@ -95,6 +95,7 @@ This is a general purpose timeline plotting geom, particularly tuned to
 
 \examples{
 library(data.table)
+library(ggplot2)
 raw_noaa <- as.data.table(noaa_data)
 
 ## Build date variable

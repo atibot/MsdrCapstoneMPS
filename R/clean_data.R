@@ -26,6 +26,12 @@
 eq_clean_data <- function(noaa_data) {
   noaa_data <- as.data.table(noaa_data)
 
+  ## Create empty variable
+  DATE = NULL
+  DAY = NULL
+  YEAR = NULL
+  MONTH = NULL
+
   ## Fix date
   noaa_data[, DATE := as.Date(paste(YEAR, MONTH, DAY, sep = "-"),
                               format = "%Y-%m-%d")]
@@ -64,6 +70,8 @@ eq_location_clean <- function(noaa_data) {
   noaa_data <- as.data.table(noaa_data)
 
   ## Strip country name from location
+  LOCATION_NAME = NULL
+
   noaa_data[, LOCATION_NAME := sub('^.*: *','', LOCATION_NAME)]
     # removes any character between the beginning of the line and the colon
       # and any following spaces

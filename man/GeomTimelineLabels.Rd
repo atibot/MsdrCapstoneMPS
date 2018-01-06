@@ -14,6 +14,7 @@ This function creates the ggproto Geom object to plot the necessary grid grob fo
 }
 \examples{
 library(data.table)
+library(ggplot2)
 raw_noaa <- as.data.table(noaa_data)
 
 ## Build date variable
