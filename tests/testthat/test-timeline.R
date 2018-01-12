@@ -23,12 +23,11 @@ eq_subset[, COUNTRY := as.factor(COUNTRY)]
 eq_subset[, EQ_PRIMARY := as.numeric(EQ_PRIMARY)]
 
 test_that("Timeline plot", {
-  g <- ggplot(data = eq_subset, aes(x = DATE, y = COUNTRY)) + geom_timeline(xmin = "2005-01-01", xmax = "2010-12-31", aes(color = DEATHS,size = EQ_PRIMARY)) + labs(y = "")
+  g <- ggplot(data = eq_subset, aes(x = DATE, y = COUNTRY)) + geom_timeline(xmin = "2008-01-01", xmax = "2009-12-31", aes(color = DEATHS,size = EQ_PRIMARY)) + labs(y = "")
   plot_data <- g$data
 
-  ## Data is subsetting correctly
-  expect_lte(as.numeric(as.Date("2005-01-01")), as.numeric(min(plot_data[, DATE])))
-  expect_gte(as.numeric(as.Date("2010-12-31")), as.numeric(max(plot_data[, DATE])))
+  ## Data is loading correctly
+  expect_equal(plot_data, eq_subset)
 
   ## Single layer for plot
   expect_equal(length(g$layers), 1)
